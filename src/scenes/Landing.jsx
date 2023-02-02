@@ -2,9 +2,22 @@ import SocialMediaIcons from "../components/SocialMediaIcons";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const Landing = ({ setSelectedPage }) => {
+  const [text] = useTypewriter({
+    /* Config */
+    words: [
+      `Hi, The Name's Sayan🤘`,
+      "Dreamer ✨",
+      "💻 + ☕️ = </>",
+      "keepCoding();",
+    ],
+    loop: true,
+    delaySpeed: 2000,
+  });
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+
   return (
     <section
       id="home"
@@ -55,9 +68,9 @@ const Landing = ({ setSelectedPage }) => {
             </span>
           </p>
 
-          <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
-            viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
+          <p className="mt-10 mb-7 text-md text-center md:text-start">
+            <span className="mr-3">{text}</span>
+            <Cursor cursorColor="#f7ab0a" />
           </p>
         </motion.div>
 
